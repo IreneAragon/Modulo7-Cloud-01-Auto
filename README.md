@@ -14,3 +14,28 @@ npm install gh-pages -D
 npm run build:dev
 npm run deploy
 ```
+El resultado con los ficheros de desarrollo ya puede verse en: 
+[https://irenearagon.github.io/Modulo7-Cloud-01-Auto/#/characters](https://irenearagon.github.io/Modulo7-Cloud-01-Auto/#/characters)
+4. Crear las carpetas y fichero necesario para automatizar el workflow de github `.github/workflows/cd.yml`
+```bash
+name: Continuos Deployment workflow
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    cd:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v3
+        - name: Install
+          run: npm ci
+        - name: Build
+          run: npm run build
+        - name: Deploy
+          run: npm run deploy
+```
+5. Subimos los cambios al repositorio
