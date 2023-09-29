@@ -18,6 +18,7 @@ npm run deploy
 ```
 El resultado con los ficheros de desarrollo ya puede verse en: 
 [https://irenearagon.github.io/Modulo7-Cloud-01-Auto/#/characters](https://irenearagon.github.io/Modulo7-Cloud-01-Auto/#/characters)
+
 4. Crear las carpetas y fichero necesario para automatizar el workflow de github `.github/workflows/cd.yml`
 ```bash
 name: Continuos Deployment workflow
@@ -77,3 +78,7 @@ jobs:
         run: npm run deploy -- -r git@github.com:<owner>/<repository-name>.git
 ```
 8. Subimos los cambios al repositorio
+
+## Puedes ver el resultado aquí: 
+[https://irenearagon.github.io/Modulo7-Cloud-01-Auto/#/characters](https://irenearagon.github.io/Modulo7-Cloud-01-Auto/#/characters)
+
